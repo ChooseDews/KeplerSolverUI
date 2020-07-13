@@ -1,0 +1,32 @@
+{
+  "name": "keplersolver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build ./src/index.html -d ./docs --public-url ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cssnano": "^4.1.10",
+    "mathjs": "^6.6.5",
+    "moment": "^2.27.0",
+    "normalize.css": "^8.0.1",
+    "oe": "0.0.1",
+    "orbitalelements": "git+https://github.com/ChooseDews/OrbitalElementsJS.git",
+    "store": "^2.0.12",
+    "three": "^0.118.3",
+    "vue": "^2.6.11",
+    "vue-hot-reload-api": "^2.3.4",
+    "vue-router": "^3.3.4",
+    "vue-tabs-chrome": "^0.5.1"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.1.2",
+    "less": "^3.11.3",
+    "sass": "^1.26.10",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
