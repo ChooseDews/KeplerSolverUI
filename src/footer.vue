@@ -62,12 +62,8 @@ export default {
             self.status = groundControl.getCurrent();
             self.timeStamp = moment().add(self.status.currentTime, 's');
         }, 500);
-
         groundControl.play(this.rate)
         groundControl.addRandom()
-
-
-
     },
     data(){
         return {

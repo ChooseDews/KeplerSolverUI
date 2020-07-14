@@ -25,8 +25,8 @@ let progressOrbits = (deltaT) => { //deltaT is in [sec]
     for(let i in inOrbit){
       let orbit = inOrbit[i];
       let n = orbit.oe;
-      let ν_f = OrbitElement.kelperSolve(n.a, n.e, orbit.ν, orbit.time, currentTime+deltaT, mu);
-      inOrbit[i].ν = ν_f;
+      let ν_f = OrbitElement.kelperSolve(n.a, n.e, orbit.oe.ν, orbit.time, currentTime+deltaT, mu);
+      inOrbit[i].oe.ν = ν_f;
       inOrbit[i].time = currentTime+deltaT;
       let {r,v} = OrbitElement.computeECI(n.ω, n.i, n.Ω, n.a, n.e, ν_f, mu);
       orbit.position = r;
@@ -50,17 +50,23 @@ let refreshOrbits = function(){
 };
 
 
-let addOrbit = function(n, name){
+let addOrbit = function(n, name, color){
+    n.ω = Number(n.ω)
+    n.i = Number(n.i)
+    n.a = Number(n.a)
+    n.Ω = Number(n.Ω)
+    n.ν = Number(n.ν)
+    n.e = Number(n.e)
+
     let {r,v} = OrbitElement.computeECI(n.ω, n.i, n.Ω, n.a, n.e, n.ν, mu);
     inOrbit.push({
         name,
         id: ID(),
         oe: n,
         time: currentTime,
-        ν: n.ν,
         orbit: gatherPoint(n, mu),
         position: r,
-        color: getRandomColor()
+        color: color || getRandomColor()
     }); 
 };
 
@@ -112,6 +118,11 @@ let getCurrent = function(){ //this map is imporant to unlink the status
     return {orbits: inOrbit.map(x=>({...x})), currentTime: Number(currentTime) }
 }
 
+let getPeriod = function(n){
+    if(n.oe) n = n.oe;
+    return 2*pi*Math.sqrt(n.a*n.a*n.a/mu);
+}
+
 let stop = function(){
     if(currentClock){
         clearInterval(currentClock);
@@ -119,7 +130,7 @@ let stop = function(){
     }
 }
 
-const rate = 10; //ms
+const rate = 30; //ms
 const rate_s = rate/1000; //sec
 
 let play = function(time){ //time is in [sec]/[real-life sec]
@@ -145,5 +156,6 @@ module.exports = {
     },
     play,
     stop,
-    addRandom
+    addRandom,
+    getPeriod
 }

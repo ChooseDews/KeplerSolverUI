@@ -78,7 +78,7 @@ let context = canvas.getContext('2d');
 
 this.ctx = context;
     const image = new Image();
-    image.src = './earth.jpg';
+    image.src = './2_no_clouds_4k.jpg';
         image.onload = () => {
 
        context.drawImage(image, 0, 0, 6000, 3000)

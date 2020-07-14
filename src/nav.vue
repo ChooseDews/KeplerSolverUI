@@ -35,6 +35,12 @@ export default {
           key:'g'
         },
         {
+          label: 'Orbits',
+          url: '/orbits',
+          key: 'or',
+                    closable: false
+        },
+        {
           label: 'About',
           url: '/about',
           key: 'a',

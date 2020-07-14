@@ -5,7 +5,7 @@
 
       <h2>Orbit.JS <small>Created By John Dews-Flick</small></h2>
 
-      <p>This web program allows you to simulate mutliple orbiting objects about earth and view their ground track in real time. This system uses kepler's equation to propigate the orbit, starting at current system time.</p>
+      <p>This web program allows you to simulate mutliple orbiting objects about earth and view their ground track in real time. This system uses kepler's equation to propagate the orbit, starting at current system time.</p>
 
         <h3>Instructions</h3>
 
