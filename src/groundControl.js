@@ -31,8 +31,11 @@ let progressOrbits = (deltaT) => { //deltaT is in [sec]
         inOrbit[i].time = newTime;
         let { r, v } = OrbitElement.computeECI(n.ω, n.i, n.Ω, n.a, n.e, ν_f, mu);
         orbit.position = r;
-        orbit.trace.push([r, newTime]);
-        if (orbit.trace.length > 300) orbit.trace.shift();
+        if(inOrbit.length < 10){
+            orbit.trace.push([r, newTime]);
+            if (orbit.trace.length > 300) orbit.trace.shift();
+        }
+        
     }
     currentTime += deltaT;
 }
