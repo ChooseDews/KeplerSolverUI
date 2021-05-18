@@ -1,54 +1,42 @@
 <template>
-<div>
-  <vue-tabs-chrome v-model="tab" @click="tabClicked" :tabs="tabs" />
-
-</div>
+  <div>
+    <vue-tabs-chrome v-model="tab" @click="tabClicked" :tabs="tabs" />
+  </div>
 </template>
 
 <script>
-
 export default {
-    methods: {
-
-        tabClicked(event, tab, index){
-            console.log(tab)
-            this.$router.push(tab.url);
-            this.tab = tab.key;
-
-        }
-
+  methods: {
+    tabClicked(event, tab, index) {
+      console.log(tab);
+      this.$router.push(tab.url);
+      this.tab = tab.key;
     },
-     data () {
+  },
+  data() {
     return {
-      tab: '3d',
+      tab: "3d",
       tabs: [
         {
-          label: '3D View',
-          url: '/',
+          label: "Ground Track",
+          url: "/2d",
           closable: false,
-          key: '3d'
+          key: "g",
         },
         {
-          label: 'Ground Track',
-          url: '/2d',
+          label: "Orbits",
+          url: "/orbits",
+          key: "or",
           closable: false,
-          key:'g'
         },
         {
-          label: 'Orbits',
-          url: '/orbits',
-          key: 'or',
-                    closable: false
+          label: "About",
+          url: "/about",
+          key: "a",
+          closable: false,
         },
-        {
-          label: 'About',
-          url: '/about',
-          key: 'a',
-                    closable: false
-        }
-        
-      ]
-    }
-  }
-}
+      ],
+    };
+  },
+};
 </script>

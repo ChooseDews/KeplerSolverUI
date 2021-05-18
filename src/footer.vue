@@ -27,7 +27,7 @@
      
         <div class="controls">
             <span class="material-icons" @click="addRandom()">
-toys
+shuffle
 </span>
 
 
@@ -85,12 +85,12 @@ export default {
             groundControl.addRandom()
         },
         faster(){
-            this.rate = this.rate + 60*60; //add one hour
-            if(this.playing) this.play();
+            this.rate = this.rate + 60*60;
+            this.play(this.rate);
         },
         slower(){
-            this.rate = this.rate - 60*60; //add one hour
-            if(this.playing) this.play();
+             this.rate = this.rate - 60*60;
+            this.play(this.rate);
 
         }
     }
@@ -101,9 +101,10 @@ export default {
 
 .footer{
     width: 100%;
-    height: 50px;
-    background: black;
+    height: 49px;
+    background: #000000;
     color: white;
+    border-bottom: 1px solid white;
 }
 
 .controls{

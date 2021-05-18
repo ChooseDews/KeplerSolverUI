@@ -9,16 +9,11 @@ const $ = require("mathjs");
 import groundControl from './groundControl';
 import VueRouter from 'vue-router'
 import router from './router';
-
+import MainApp from './app.vue'
 
 Vue.use(VueRouter)
 window.groundControl = groundControl;
-
 Vue.use(VueTabsChrome)
-
-
-import MainApp from './app.vue'
-
 new Vue({
   el: '#app',
   render: h => h(MainApp),
