@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -r ./build/*; rm -r ./dist; cp ./src/img/* ./build; node ./node_modules/parcel-bundler/bin/cli.js build ./src/index.html -d ./build --public-url ./",
+    "build": "rm -r ./docs/*; rm -r ./dist; cp ./src/img/* ./docs; node ./node_modules/parcel-bundler/bin/cli.js build ./src/index.html -d ./docs --public-url ./",
     "start": "cp ./src/img/* ./dist; node ./node_modules/parcel-bundler/bin/cli.js ./src/index.html"
   },
   "author": "",
