@@ -13,7 +13,7 @@
   "dependencies": {
     "cssnano": "^4.1.10",
     "mathjs": "^6.6.5",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "normalize.css": "^8.0.1",
     "oe": "0.0.1",
     "orbitalelements": "git+https://github.com/ChooseDews/OrbitalElementsJS.git",
